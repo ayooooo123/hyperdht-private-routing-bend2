@@ -12,7 +12,8 @@
     "browser.js",
     "testnet.js",
     "bin.js",
-    "lib/**/*.js"
+    "lib/**/*.js",
+    "bend2/**/*"
   ],
   "imports": {
     "#private-route-process": {
@@ -116,7 +117,11 @@
     "test:private:linux-gates": "bash scripts/linux-gates.sh",
     "test:remote:peer": "bash scripts/remote-peer.sh",
     "test:remote:peer:local": "bash scripts/remote-peer.sh local",
-    "end-to-end": "brittle test/end-to-end/*.js"
+    "end-to-end": "brittle test/end-to-end/*.js",
+    "bend:check": "bend bend2/PROOF.bend",
+    "bend:build": "bend bend2/routing.bend -o bend2/routing.mjs",
+    "test:bend2": "brittle test/private/bend2-verified-core.js",
+    "test:bend2:bare": "brittle-bare test/private/bend2-verified-core.js"
   },
   "author": "Mathias Buus (@mafintosh)",
   "license": "MIT",
